@@ -100,53 +100,6 @@ class account extends database
             }
         }
     }
-
-    public static function profile()
-    {
-        if (http::is_method("post")) {
-            try {
-                $id = http::input("id");
-                $first_name = http::input("first_name");
-                $last_name = http::input("last_name");
-                $email = http::input("email");
-                $password = http::input("password");
-                $country = http::input("country");
-                $state = http::input("state");
-                $city = http::input("city");
-                $address = http::input("address");
-                $postal_code = http::input("postal_code");
-                $phone = http::input("phone");
-                $updated_at = date('Y-m-d H:i:s');
-
-                $stmt = "UPDATE `users` SET `first_name`='{$first_name}', `last_name`='{$last_name}', `email`='{$email}', `password`='{$password}',
-                `country`='{$country}',`state`='{$state}', `city`='{$city}', `address`='{$address}', `postal_code`='{$postal_code}',
-                `phone`='{$phone}', `updated_at`='{$updated_at}'  WHERE id={$id}";
-                $query = parent::$con->prepare($stmt);
-                $data = $query->execute();
-                http::redirect("users.php");
-
-                return $data;
-            } catch (PDOException $e) {
-                echo $e->getMessage();
-            }
-        }
-    }
-
-    public static function delete()
-    {
-        if (http::is_get("id")) {
-            try {
-                $id = http::input("id");
-                $stmt = "DELETE FROM users WHERE id={$id}";
-                $query = parent::$con->prepare($stmt);
-                $query->execute();
-
-                http::redirect("users.php");
-            } catch (PDOException $e) {
-                echo $e->getMessage();
-            }
-        }
-    }
 }
 
 

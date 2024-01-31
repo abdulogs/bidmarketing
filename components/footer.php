@@ -1,4 +1,4 @@
-<footer class=" bg-white d-flex align-items-end">
+<footer class=" bg-white d-flex align-items-end py-5">
     <div class="container my-auto">
         <div class="copyright text-center my-auto">
             <span>Copyright &copy; Your Website 2020</span>

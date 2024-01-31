@@ -1,6 +1,7 @@
 <?php require_once "./app/bootstrap.php"; ?>
 <?php middleware::logout("auth_id", "login.php"); ?>
-<?php utils::module("account"); ?>
+<?php utils::module("work"); ?>
+<?php work::assignment(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,29 +23,45 @@
                 <!-- Navbar -->
                 <?php utils::component("navbar"); ?>
                 <!-- Navbar -->
-                <div class="container-fluid">
-                    <div class="container mt-5">
-                        <h2 class="text-center mb-4">Submitt Assignment Work</h2>
-                        <form id="submitform" method="post">
-                            <div class="form-group">
-                                <label for="assignmentTitle">Assignment Title:</label>
-                                <input type="text" class="form-control" id="assignmentTitle" placeholder="Enter assignment title" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="yourEmail">Your Email:</label>
-                                <input type="email" class="form-control" id="yourEmail" placeholder="Enter your email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="assignmentDescription">Assignment Description:</label>
-                                <textarea class="form-control" id="assignmentDescription" rows="4" placeholder="Enter assignment description" required></textarea>
-                            </div>
-                            <input type="submit" name="submitDE" value="Submit" class="btn btn-primary btn-user btn-block" />
-                        </form>
+                <main class="container my-5 py-5">
+                    <div class="row justify-content-center">
+                        <div class="col-sm-6 m-auto">
+                            <form method="POST" class="card shadow border rounded-5">
+                                <div class="card-header px-4 text-center bg-transparent border-0 pt-5">
+                                    <h1 class="card-title mb-2 h2">Assignment!</h1>
+                                </div>
+                                <div class="card-body px-4">
+                                    <div class="row">
+                                        <div class="col-sm-12">
+                                            <div class="form-group mb-3">
+                                                <label class="mb-0" for="name"><b>Title</b></label>
+                                                <input type="text" name="name" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group mb-3">
+                                                <label class="mb-0" for="email"><b>Email</b></label>
+                                                <input type="text" name="email" class="form-control" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12">
+                                            <div class="form-group mb-3">
+                                                <label class="mb-0" for="description"><b>Assignment Description:</b></label>
+                                                <textarea class="form-control" name="description" rows="4" required></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer px-4 bg-transparent border-0 pb-5">
+                                    <button type="submit" name="submit" class="btn btn-primary btn-block"><b>Create</b></button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-                    <!-- Footer -->
-                    <?php utils::component("footer"); ?>
-                    <!-- Footer -->
-                </div>
+                </main>
+                <!-- Footer -->
+                <?php utils::component("footer"); ?>
+                <!-- Footer -->
             </div>
         </div>
     </div>
