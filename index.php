@@ -1,6 +1,6 @@
 <?php require_once "./app/bootstrap.php"; ?>
 <?php middleware::logout("auth_id", "login.php"); ?>
-<?php utils::module("account"); ?>
+<?php utils::module("work"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -34,7 +34,7 @@
                                         <div class="col mr-2">
                                             <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                                 Earnings (Monthly)</div>
-                                            <div class="h5 mb-0 font-weight-bold text-gray-800"></div>
+                                            <div class="h5 mb-0 font-weight-bold text-gray-800"><?= work::earnings(); ?></div>
                                         </div>
                                         <div class="col-auto">
                                             <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -169,10 +169,9 @@
 
 
     <?php utils::component("scripts"); ?>
-
-    <script src="vendor/chart.js/Chart.min.js"></script>
-    <script src="js/demo/chart-area-demo.js"></script>
-    <script src="js/demo/chart-pie-demo.js"></script>
+    <script src="assets/libs/chart.js/Chart.min.js"></script>
+    <script src="assets/js/demo/chart-area-demo.js"></script>
+    <script src="assets/js/demo/chart-pie-demo.js"></script>
 
 </body>
 

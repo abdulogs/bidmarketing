@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2024 at 08:27 PM
+-- Generation Time: Feb 01, 2024 at 05:21 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -51,8 +51,6 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `email`, `password`, `phone`, `country`, `state`, `city`, `address`, `postal_code`, `is_role`, `is_active`, `created_at`, `updated_at`) VALUES
-(1, NULL, NULL, 'g', NULL, '$2y$10$S.c/aiWoyPgVDa2GA76IeemkiH7anY56A63gUHqPJXmftQaAVfC.e', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-31 17:06:36', '2024-01-31 17:06:36'),
-(2, NULL, NULL, 'Hannan', NULL, '$2y$10$.SB5qavrlacdLPNDCd5sHu2PDv5s9tlhwf9Ew9Zm9vmps0PwUq/mq', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '2024-01-31 17:06:36', '2024-01-31 17:06:36'),
 (3, 'Abdul', 'Hannan', 'abduldev88', 'abdulogs88@gmail.com', '8504605', '', NULL, NULL, NULL, NULL, NULL, 0, 1, '2024-01-31 13:35:48', '2024-01-31 13:35:48');
 
 -- --------------------------------------------------------
@@ -66,9 +64,18 @@ CREATE TABLE `work` (
   `name` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `description` text DEFAULT NULL,
+  `price` decimal(10,0) NOT NULL,
   `created_at` timestamp NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `work`
+--
+
+INSERT INTO `work` (`id`, `name`, `email`, `description`, `price`, `created_at`, `updated_at`) VALUES
+(5, 'ac', 'abdulogs88@gmail.com', 'd', '200', '2024-02-01 12:20:11', '2024-02-01 12:20:11'),
+(6, 'Abdul Hannan', 'abdulogs88@gmail.com', 's', '200', '2024-02-01 12:20:27', '2024-02-01 12:20:27');
 
 --
 -- Indexes for dumped tables
@@ -100,7 +107,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `work`
 --
 ALTER TABLE `work`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
